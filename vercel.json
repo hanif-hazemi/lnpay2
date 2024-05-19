@@ -5,7 +5,8 @@
     ],
     "redirects": [
       { "source": "/api/(.*)", "destination": "/api/webhook.js", "statusCode": 200 },
-      { "source": "public/index", "destination": "/public/index.html", "statusCode": 200 }
+      { "source": "/", "destination": "public/index.html", "statusCode": 200 },
+      { "source": "/index", "destination": "public/index.html", "statusCode": 200 }
     ],
     "cleanUrls": true
   }
