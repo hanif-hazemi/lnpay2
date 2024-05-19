@@ -1,10 +1,8 @@
 {
     "version": 2,
-    "functions": {
-      "api/webhook.js": {
-        "runtime": "nodejs18.x"
-      }
-    },
+    "builds": [
+        { "src": "api/webhook.js", "use": "@vercel/node" }
+    ],
     "redirects": [
       { "source": "/api/(.*)", "destination": "/api/webhook.js", "statusCode": 200 },
       { "source": "/", "destination": "/index.html", "statusCode": 200 }
