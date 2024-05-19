@@ -12,18 +12,22 @@
     <div id="qrcode"></div>
     <p id="address">hanif@getalby.com</p>
     <script>
+        // Generate QR code
         var qrcode = new QRCode(document.getElementById("qrcode"), {
             text: "lnurlp:hanif@getalby.com",
             width: 128,
             height: 128
         });
 
-        const socket = io();
+        // Establish a WebSocket connection to the server
+        const socket = io(); // This line establishes the connection
+
+        // Listen for 'paymentReceived' event from the server
         socket.on('paymentReceived', function(message) {
-            alert(message);
+            alert(message); // Show an alert with the payment message
             // Use Web Speech API to voice out the message
             const speech = new SpeechSynthesisUtterance(message);
-            window.speechSynthesis.speak(speech);
+            window.speechSynthesis.speak(speech); // Speak the message
         });
     </script>
 </body>
