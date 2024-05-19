@@ -1,12 +1,10 @@
 {
     "version": 2,
     "builds": [
-        { "src": "api/webhook.js", "use": "@vercel/node" },
-        { "src": "public", "use": "@vercel/static" }
+      { "src": "api/index.js", "use": "@vercel/node" }
     ],
-    "redirects": [
-      { "source": "/api/(.*)", "destination": "/api/webhook.js", "statusCode": 200 }
-    ],
-    "cleanUrls": true
+    "routes": [
+      { "src": "/api/(.*)", "dest": "api/index.js" }
+    ]
   }
   
