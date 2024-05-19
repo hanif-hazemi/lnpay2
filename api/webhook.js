@@ -9,12 +9,11 @@ app.use(bodyParser.json());
 const server = http.createServer(app);
 const io = new Server(server);
 
-// Setup webhook endpoint
 app.post('/api/webhook', (req, res) => {
     const { state, value } = req.body;
     if (state === 'SETTLED') {
         const message = `Thank you. Payment received. ${value} satoshi.`;
-        io.emit('paymentReceived', message); // Emit the event to clients
+        io.emit('paymentReceived', message);
         res.status(200).send('Notification received');
     } else {
         res.status(200).send('Payment not settled');
