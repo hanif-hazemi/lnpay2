@@ -1,0 +1,14 @@
+{
+    "name": "lightning-payment-notifier",
+    "version": "1.0.0",
+    "main": "api/webhook.js",
+    "scripts": {
+      "start": "node api/webhook.js"
+    },
+    "dependencies": {
+      "express": "^4.17.1",
+      "body-parser": "^1.19.0",
+      "socket.io": "^4.0.0"
+    }
+  }
+  
